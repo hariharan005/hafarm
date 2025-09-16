@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+  --heading: 'Lora', serif;
+  --body: 'Work Sans', system-ui, sans-serif;
+  --primary: #2e7d32;
+  --secondary: #388e3c;
+  --text: #444;
+  --bg: #fff;
+}
+
+.about-section {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 24px 14px;
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+}
+
+.about-heading {
+  font-family: var(--heading);
+  text-align: center;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;   /* ✅ center content horizontally */
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-col {
+  flex: 1 1 350px;
+  max-width: 500px;          /* ✅ prevents stretching too wide */
+  min-width: 280px;
+}
+
+.about-text {
+  text-align: left;          /* ✅ keeps text aligned properly */
+}
+
+.about-text h3 {
+  font-family: var(--heading);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+
+.about-text p {
+  font-family: var(--body);
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(46,125,50,0.08);
+  display: block;
+  margin: 0 auto;
+}
+
+/* 📱 Mobile Layout */
+@media (max-width: 900px) {
+  .about-row,
+  .about-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;      /* ✅ center text on mobile */
+  }
+
+  /* Force stacking order: Title → Image → Text */
+  .about-text h3 {
+    order: -2;
+  }
+  .about-img {
+    order: -1;
+  }
+  .about-text p {
+    order: 0;
+  }
+
+  .about-img img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 18px 10px;
+  }
+
+  .about-heading {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .about-text h3 {
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+}

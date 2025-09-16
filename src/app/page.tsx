@@ -1,10 +1,9 @@
-// /src/app/page.tsx
+import React from 'react';
 
-export default function Home() {
-  return (
-    <main>
-      <h1>Welcome to Next.js!</h1>
-      <p>This is your boilerplate page.</p>
-    </main>
-  );
-}
+const Home: React.FC = () => {
+    return (
+        <></>
+    );
+};
+
+export default Home;

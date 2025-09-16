@@ -1,0 +1,299 @@
+/* =========================
+   Global Blog Container
+========================= */
+.blog-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #2e2e2e;
+  position: relative;
+  z-index: 2; /* Above background */
+}
+
+.blog-container h1 {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d6a4f;
+}
+
+/* =========================
+   Search Box
+========================= */
+.search-box {
+  width: 60%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 20px auto;
+  display: block;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-box:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 8px rgba(46, 125, 50, 0.5);
+}
+
+.no-results {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #d32f2f;
+}
+
+/* =========================
+   Recipe List / Cards
+========================= */
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card h2 {
+  margin: 1rem;
+  font-size: 1.4rem;
+  color: #1b4332;
+}
+
+.recipe-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* =========================
+   Recipe Details
+========================= */
+.recipe-details {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.recipe-details img {
+  width: 100%;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-details h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2d6a4f;
+}
+
+.recipe-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* =========================
+   Recipe Meta Info
+========================= */
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.recipe-meta p {
+  padding: 6px 12px;
+  border-left: 4px solid #2d6a4f;
+  border-radius: 6px;
+  background: #f1f8f4;
+}
+
+/* =========================
+   Sub-sections (Ingredients, Tips, FAQs)
+========================= */
+.recipe-details h3 {
+  margin-top: 1.4rem;
+  padding-bottom: 4px;
+  font-size: 1.3rem;
+  color: #1b4332;
+  border-bottom: 2px solid #e6f4ea;
+}
+
+.recipe-details ul,
+.recipe-details ol {
+  margin: 0.8rem 0 1.5rem 1.5rem;
+  color: #444;
+}
+
+.recipe-details ul {
+  list-style-type: disc;
+}
+
+.recipe-details ol {
+  list-style-type: decimal;
+}
+
+/* FAQs */
+.faq {
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border-left: 4px solid #2d6a4f;
+  border-radius: 6px;
+  background: #f9fdf9;
+}
+
+.faq b {
+  color: #2d6a4f;
+}
+
+/* Nutrition */
+.nutrition {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  background: #f1f8f4;
+  color: #2e2e2e;
+}
+
+/* =========================
+   Buttons
+========================= */
+.back-btn,
+.print-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn {
+  background: #2d6a4f;
+  color: #fff;
+}
+
+.back-btn:hover {
+  background: #1b4332;
+}
+
+.print-btn {
+  float: right;
+  position: sticky;
+  top: 10px;
+  background: #082d0f;
+  color: #fff;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+.print-btn:hover {
+  background: #d9ba0b;
+  color: #082d0f;
+  transform: scale(1.05);
+}
+
+/* =========================
+   Floating Emoji
+========================= */
+.cook-emoji {
+  position: fixed;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s linear;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Print Mode
+========================= */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .recipe-details,
+  .recipe-details * {
+    visibility: visible;
+  }
+  .recipe-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .back-btn,
+  .print-btn,
+  .cook-emoji,
+  .search-box {
+    display: none !important;
+  }
+}
+
+/* =========================
+   Parallax Background
+========================= */
+.parallax-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background: url("../../../public/6.jpg") center/cover no-repeat;
+  z-index: -1;
+  will-change: transform;
+  transform: perspective(1000px) scale(1.05);
+  transition: transform 0.1s ease-out;
+}
